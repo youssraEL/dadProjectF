@@ -30,6 +30,21 @@ const routes: Routes = [{
         .then(m => m.UsersModule),
     },
     {
+      path: 'client',
+      loadChildren: () => import('./client/client.module')
+        .then(m => m.ClientModule),
+    },
+    {
+      path: 'product',
+      loadChildren: () => import('./product/product.module')
+        .then(m => m.ProductModule),
+    },
+    {
+      path: 'command',
+      loadChildren: () => import('./command/Command.module')
+        .then(m => m.CommandModule),
+    },
+    {
       path: 'layout',
       loadChildren: () => import('./layout/layout.module')
         .then(m => m.LayoutModule),

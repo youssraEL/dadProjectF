@@ -34,6 +34,59 @@ export class PagesMenu {
         group: true,
       },
       {
+        title: 'Client',
+        icon: 'person-outline',
+        children: [
+          {
+            title: 'Registering',
+            icon: 'person-add-outline',
+            link: '/pages/client/registering',
+          },
+          {
+            title: 'List',
+            icon: 'list-outline',
+            link: '/pages/client/list',
+          },
+        ],
+  },
+      {
+        title: 'Product',
+        icon: 'shopping-cart-outline',
+        children: [
+          {
+            title: 'Registering',
+            icon: 'shopping-cart-outline',
+            link: '/pages/product/registering',
+          },
+          {
+            title: 'Category',
+            icon: 'layout-outline',
+            link: '/pages/product/category',
+          },
+          {
+            title: 'List',
+            icon: 'list-outline',
+            link: '/pages/product/list',
+          },
+        ],
+      },
+      {
+        title: 'Command',
+        icon: 'edit-2-outline',
+        children: [
+          {
+            title: 'Registering',
+            icon: 'edit-2-outline',
+            link: '/pages/command/registering',
+          },
+          {
+            title: 'List',
+            icon: 'list-outline',
+            link: '/pages/command/list',
+          },
+        ],
+      },
+      {
         title: 'Layout',
         icon: 'layout-outline',
         children: [
