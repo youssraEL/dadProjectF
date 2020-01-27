@@ -64,7 +64,7 @@ export class ClientService {
   }
 
   // DELETE
-  public delete(id: number) {
+  public deleteClient(id: number) {
     return this.http.delete(this.baseurl + '/delete/' + id, this.httpOptions)
       .pipe(
         retry(1),

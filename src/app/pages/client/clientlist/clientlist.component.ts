@@ -35,11 +35,11 @@ export class ClientlistComponent implements OnInit {
         type: 'number',
         editable: false,
       },
-      Fristname: {
+      firstname: {
         title: 'First Name',
         type: 'string',
       },
-      lastName: {
+      lastname: {
         title: 'Last Name',
         type: 'string',
       },
@@ -51,7 +51,7 @@ export class ClientlistComponent implements OnInit {
         title: 'Fix',
         type: 'string',
       },
-      address: {
+      adresse: {
         title: 'Address',
         type: 'string',
       },
@@ -71,40 +71,38 @@ export class ClientlistComponent implements OnInit {
   };
   source: LocalDataSource = new LocalDataSource();
 
-  constructor(private clientService: ClientService) {
-    this.clientService.getAll().subscribe(data => {
+  constructor(private service: ClientService) {
+    this.service.getAll().subscribe(data => {
       this.source = data;
     });
   }
 
   ngOnInit() {
-    this.clientService.getAll().subscribe(data => {
+    this.service.getAll().subscribe(data => {
       this.source = data;
     });
   }
 
-  onDeleteConfirm(event): void {
+  onDeleteConfirm(event: any) {
     if (window.confirm('Are you sure you want to delete?')) {
-      event.confirm.resolve();
-      this.clientService.delete(event.data.id).subscribe();
+      event.confirm.resolve(event.data);
+      this.service.deleteClient(event.data.id).subscribe(data => {});
     } else {
       event.confirm.reject();
     }
   }
 
-  create(event) {
+  create(event: any) {
     event.confirm.resolve(event.newData);
-    this.clientService.create(event.newData).subscribe( data => {});
+    this.service.create(event.newData).subscribe( data => {});
   }
 
   edit(event: any) {
     event.confirm.resolve(event.newData);
-    this.clientService.update(event.newData).subscribe( data => {
+    this.service.update(event.newData).subscribe( data => {
     });
   }
 
-  onRowSelect($event: any) {
-    this.clientService = $event.data;
-  }
+  onRowSelect(event: any) {}
 
 }

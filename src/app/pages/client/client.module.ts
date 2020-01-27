@@ -4,9 +4,9 @@ import { ClientComponent } from './client.component';
 import { ClientregisterComponent } from './clientregister/clientregister.component';
 import { ClientlistComponent } from './clientlist/clientlist.component';
 import {ClientRoutingModule} from './client-routing.module';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {NbCardModule} from "@nebular/theme";
-import {Ng2SmartTableModule} from "ng2-smart-table";
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {NbCardModule} from '@nebular/theme';
+import {Ng2SmartTableModule} from 'ng2-smart-table';
 
 @NgModule({
   declarations: [ClientComponent, ClientregisterComponent, ClientlistComponent],

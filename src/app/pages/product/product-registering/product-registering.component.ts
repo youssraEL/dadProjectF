@@ -3,12 +3,13 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ProductService} from '../../../@core/backend/common/services/Product.service';
 import {Product} from '../../../@core/backend/common/api/Product';
 import {ProductCategoryService} from '../../../@core/backend/common/services/ProductCategory.service';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'ngx-product-registering',
   templateUrl: './product-registering.component.html',
   styleUrls: ['./product-registering.component.scss'],
-  providers: [ProductService, ProductCategoryService],
+  providers: [ProductService, ProductCategoryService, ToastrService],
 })
 
 export class ProductRegisteringComponent implements OnInit {
@@ -19,7 +20,7 @@ export class ProductRegisteringComponent implements OnInit {
   submitted = false;
   productCategory: any;
   constructor(private service: ProductService , private formBuilder: FormBuilder ,
-              private productService: ProductCategoryService ) { }
+              private productService: ProductCategoryService, private toast: ToastrService ) { }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
@@ -43,8 +44,8 @@ export class ProductRegisteringComponent implements OnInit {
     });
     this.service.create(this.product).subscribe(data => {
     });
-    // this.toastr.success('The process has been saved.', 'Success');
-    // this.init();
+    this.toast.success('The process has been saved.', 'Success');
+    this.onReset();
     // display form values on success
   }
 
@@ -52,6 +53,7 @@ export class ProductRegisteringComponent implements OnInit {
   onReset() {
     this.submitted = false;
     this.registerForm.reset();
+    this.product = new Product();
   }
 
 }

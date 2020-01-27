@@ -5,8 +5,8 @@ export class Client {
   firstname: string;
   adresse: string;
   RaisonSociale: string;
-  phone: number;
-  fix: number;
+  phone: string;
+  fix: string;
   email: string;
   typeClient: string;
 

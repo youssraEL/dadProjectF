@@ -63,7 +63,7 @@ export class CommandListComponent implements OnInit {
       },
     },
   };
-  source: LocalDataSource = new LocalDataSource();
+  source: any;
 
   constructor(private service: CommandService) {
     this.service.getAll().subscribe(data => {
@@ -77,28 +77,25 @@ export class CommandListComponent implements OnInit {
     });
   }
 
-  onDeleteConfirm(event): void {
+  onDeleteConfirm(event: any) {
     if (window.confirm('Are you sure you want to delete?')) {
-      event.confirm.resolve();
-      this.service.delete(event.data.id).subscribe();
+      event.confirm.resolve(event.data);
+      this.service.delete(event.data.id).subscribe( data => { });
     } else {
       event.confirm.reject();
     }
   }
 
-  create(event) {
+  create(event: any) {
     event.confirm.resolve(event.newData);
-    this.service.create(event.newData).subscribe( data => {});
+    this.service.create(event.newData).subscribe( data => {
+    });
   }
 
   edit(event: any) {
     event.confirm.resolve(event.newData);
     this.service.update(event.newData).subscribe( data => {
     });
-  }
-
-  onRowSelect(event: any) {
-    this.service = event.data;
   }
 
 }

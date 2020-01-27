@@ -42,7 +42,7 @@ export class ProductListComponent implements OnInit {
         type: 'number',
       },
       productCategory: {
-        title: 'Payement',
+        title: 'product Category',
         type: 'string',
       },
       quantityInStock: {
@@ -69,10 +69,10 @@ export class ProductListComponent implements OnInit {
     });
   }
 
-  onDeleteConfirm(event): void {
+  onDeleteConfirm(event) {
     if (window.confirm('Are you sure you want to delete?')) {
       event.confirm.resolve();
-      this.productService.delete(event.data.id).subscribe();
+      this.productService.delete(event.data.id).subscribe(data => {});
     } else {
       event.confirm.reject();
     }
@@ -89,8 +89,7 @@ export class ProductListComponent implements OnInit {
     });
   }
 
-  onRowSelect($event: any) {
-    this.productService = $event.data;
+  onRowSelect(event: any) {
   }
 
 }

@@ -1,42 +1,63 @@
 
 
 <div class="card m-3">
-  <h5 class="card-header" align="center"> Client Registering</h5>
+  <h5 class="card-header" align="center"> Commands Registering</h5>
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <div class="card-body">
       <div class="form-row">
         <div class="form-group col-4">
           <label class="label">Client*</label>
-          <input formControlName="ice" [(ngModel)]="ICE" class="form-control" placeholder="ICE" type="text" required="true"  [ngClass]="{ 'is-invalid': submitted && f.ice.errors }" />
-          <div *ngIf="submitted && f.ice.errors" class="invalid-feedback">
-            <div *ngIf="f.ice.errors.required">ICE is required</div>
-          </div></div>
-        <div class="form-group col-4">
+          <nb-select  formControlName="ice" [(ngModel)]="ICE" class="type-select "  nbSelect fullWidth
+                      placeholder="Client">
+            <nb-option *ngFor="let item of clientList" [value]="item" >{{item}}</nb-option>
+          </nb-select>
+        </div>
+          <div class="form-group col-4">
           <label class="label">Date</label>
-          <input [ngModelOptions]="{standalone: true}" [(ngModel)]="command.commandeDate"  placeholder="Date" class="form-control" type="text" required="true" />
+            <input [ngModelOptions]="{standalone: true}" [(ngModel)]="command.commandeDate" class="form-control" [nbDatepicker]="formpicker" nbInput placeholder="00/00/0000">
+            <nb-datepicker #formpicker></nb-datepicker>
         </div>
         <div class="form-group col-4">
-          <label class="label">Quantity Sell</label>
-          <input [ngModelOptions]="{standalone: true}" [(ngModel)]="command.qteSell"  placeholder="Sell" class="form-control" type="text" required="true"/>
+          <label class="label">Statut</label>
+          <nb-select  formControlName="statut" [(ngModel)]="Statut" class="type-select "  nbSelect fullWidth
+                      placeholder="statut" >
+            <nb-option *ngFor="let item of items" [value]="item" >{{item}}</nb-option>
+          </nb-select>
+
         </div>
       </div>
       <div class="form-row">
         <div class="form-group col-4">
-          <label class="label">Quantity Buy</label>
-          <input [ngModelOptions]="{standalone: true}" [(ngModel)]="command.qteBuy" placeholder="Buy" class="form-control" type="text" required>
+          <label class="label">Product</label>
+          <nb-select  formControlName="statut" [(ngModel)]="product" class="type-select "  nbSelect fullWidth
+                      placeholder="Product" >
+            <nb-option *ngFor="let item of productList" [value]="item" >{{item}}</nb-option>
+          </nb-select>
         </div>
         <div class="form-group col-4">
+          <label class="label">Quantity Sell</label>
+          <input [ngModelOptions]="{standalone: true}"  [(ngModel)]="command.qteSell"  placeholder="Sell" class="form-control" type="text" required="true"/>
+        </div>
+        <div class="form-group col-4">
+          <label class="label">Quantity (Buy)</label>
+          <input [ngModelOptions]="{standalone: true}"  [(ngModel)]="command.qteBuy" placeholder="Buy" class="form-control" type="text" required>
+        </div>
+
+      </div>
+      <div class="form-row">
+        <div class="form-group col-4">
           <label class="label">Payement Methode</label>
-          <input [ngModelOptions]="{standalone: true}" [(ngModel)]="command.payementMethode" placeholder="Payement" class="form-control" type="text">
+          <nb-select  formControlName="ice" [(ngModel)]="command.payementMethode"class="type-select "  nbSelect fullWidth
+                      placeholder="Payement">
+            <nb-option *ngFor="let item of payement" [value]="item" >{{item}}</nb-option>
+          </nb-select>
         </div>
         <div class="form-group col-4">
           <label class="label">Price</label>
           <input [ngModelOptions]="{standalone: true}" [(ngModel)]="command.price" placeholder="price"  class="form-control" type="text">
         </div>
-      </div>
-      <div class="form-row">
         <div class="form-group col-4">
-          <label class="label"></label>
+          <label class="label">Remainder</label>
           <input [(ngModel)]="command.priceReste"  [ngModelOptions]="{standalone: true}" placeholder="Price Reste" class="form-control" type="text">
         </div>
       </div>
@@ -44,7 +65,6 @@
         <button class="btn btn-primary mr-1" (click) ="onSubmit()">Register</button>
         <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
       </div>
-
     </div></form>
 </div>
 

@@ -31,14 +31,13 @@ export class ProductService {
   }
 
   // GET
-  public get(id: Product): Observable<any> {
-    return this.http.get(this.baseurl + id)
+  public get(product: string): Observable<any> {
+    return this.http.get(this.baseurl + '/getByName/' +  product)
       .pipe(
         retry(1),
         catchError(this.errorHandl),
       );
   }
-
   // GET
   public getAll(): Observable<any> {
     return this.http.get(this.baseurl + '/getAll')

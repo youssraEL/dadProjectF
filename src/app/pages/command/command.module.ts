@@ -5,7 +5,7 @@ import { CommandListComponent } from './command-list/command-list.component';
 import {CommandeRoutingModule} from './commande-routing.module';
 import { CommandComponent } from '../command/command.component';
 import {Ng2SmartTableModule} from "ng2-smart-table";
-import {NbCardModule} from "@nebular/theme";
+import {NbCardModule, NbDatepickerModule, NbSelectModule} from "@nebular/theme";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
@@ -17,6 +17,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     NbCardModule,
     ReactiveFormsModule,
     FormsModule,
+    NbSelectModule,
+    NbDatepickerModule,
   ],
 })
 export class CommandModule { }
