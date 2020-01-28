@@ -45,43 +45,43 @@ export class CommandRegistringComponent implements OnInit {
       ice: ['', Validators.required],
       statut: ['', Validators.required],
     }, {
-      // validator: MustMatch('password', 'confirmPassword'),
     });
   }
   get f() { return this.registerForm.controls; }
- init () {
-    this.command = new Command();
- }
+
   onSubmit() {
     this.submitted = true;
-    this.serviceClient.getByCin(this.ICE).subscribe(data => {this.command.client = data;
-    });
-    this.serviceProduct.get(this.product).subscribe( data => {this.command.product = data ; });
+    this.serviceClient.getByCin(this.ICE).subscribe(Obj => {this.command.client = Obj;
+    this.serviceProduct.get(this.product).subscribe( DATA => {this.command.product = DATA;
     if (this.Statut === 'Buying') {
       this.command.qteSell = 0;
-      this.service.create(this.command).subscribe(data => {
-      });
+
       this.serviceProduct.get(this.product).subscribe( data => {
-        data.quantityInStock = data.quantityInStock + this.command.qteBuy ;
+        data.quantityInStock = Number(data.quantityInStock) + Number(this.command.qteBuy) ;
         this.serviceProduct.update(data).subscribe( obj => {});
       });
+
+      this.service.create(this.command).subscribe(data => { });
+      this.toastr.success( 'the Command added with success' , 'add Command');
+
     } else {
-        this.command.qteBuy = 0;
-        this.serviceProduct.get(this.product).subscribe( data => {
-          this.productData = data ;
+      this.command.qteBuy = 0;
+      this.serviceProduct.get(this.product).subscribe(data => {
+        data.quantityInStock = Number(data.quantityInStock) - Number(this.command.qteSell);
+      if (data.quantityInStock < 0) {
+        this.toastr.warning('the Product in the stock is just ' + data.quantityInStock, 'Warning');
+      } else {
+        this.serviceProduct.update(data).subscribe(obj => {});
+        this.service.create(this.command).subscribe(Data => {
         });
-        if (this.productData.quantityInStock < 0 ) {
-          this.toastr.warning( 'the Product in the stock is just ' + this.productData.quantityInStock , 'Warning');
-        } else {
-          this.productData.quantityInStock = this.productData.quantityInStock - this.command.qteSell ;
-          this.service.create(this.command).subscribe(data => {
-          });
-          this.toastr.success( 'the Command added with success' , 'add Command');
-          console.log(this.productData);
-          this.serviceProduct.update(this.productData).subscribe( data => {});
-        }
+        this.toastr.success('the Command added with success', 'add Command');
+      }
+      });
+
+
     }
-      this.init();
+  });
+    });
     // display form values on success
   }
 

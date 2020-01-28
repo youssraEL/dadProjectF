@@ -23,7 +23,7 @@ export class CommandService {
   }
 
   // POST JSON.stringify(data)
-  public create(data: Command): Observable<Command> {
+  public create(data: Command): Observable<any> {
     return this.http.post(this.baseurl + '/create', data , this.httpOptions)
       .pipe(
         retry(1),

@@ -7,7 +7,7 @@
       <div class="form-row">
         <div class="form-group col-4">
           <label class="label">Client*</label>
-          <nb-select  formControlName="ice" [(ngModel)]="ICE" class="type-select "  nbSelect fullWidth
+          <nb-select   [(ngModel)]="ICE" [ngModelOptions]="{standalone: true}" class="type-select "  nbSelect fullWidth
                       placeholder="Client">
             <nb-option *ngFor="let item of clientList" [value]="item" >{{item}}</nb-option>
           </nb-select>
@@ -29,7 +29,7 @@
       <div class="form-row">
         <div class="form-group col-4">
           <label class="label">Product</label>
-          <nb-select  formControlName="statut" [(ngModel)]="product" class="type-select "  nbSelect fullWidth
+          <nb-select  [ngModelOptions]="{standalone: true}" [(ngModel)]="product" class="type-select "  nbSelect fullWidth
                       placeholder="Product" >
             <nb-option *ngFor="let item of productList" [value]="item" >{{item}}</nb-option>
           </nb-select>
@@ -47,7 +47,7 @@
       <div class="form-row">
         <div class="form-group col-4">
           <label class="label">Payement Methode</label>
-          <nb-select  formControlName="ice" [(ngModel)]="command.payementMethode"class="type-select "  nbSelect fullWidth
+          <nb-select  [ngModelOptions]="{standalone: true}" [(ngModel)]="command.payementMethode"class="type-select "  nbSelect fullWidth
                       placeholder="Payement">
             <nb-option *ngFor="let item of payement" [value]="item" >{{item}}</nb-option>
           </nb-select>
@@ -57,12 +57,26 @@
           <input [ngModelOptions]="{standalone: true}" [(ngModel)]="command.price" placeholder="price"  class="form-control" type="text">
         </div>
         <div class="form-group col-4">
+          <label class="label">Payed</label>
+          <input [(ngModel)]="command.priceTopay"  [ngModelOptions]="{standalone: true}" placeholder="Price Reste" class="form-control" type="text">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-4">
           <label class="label">Remainder</label>
-          <input [(ngModel)]="command.priceReste"  [ngModelOptions]="{standalone: true}" placeholder="Price Reste" class="form-control" type="text">
+          <input [ngModelOptions]="{standalone: true}" [(ngModel)]="command.priceReste" placeholder="Remainder"  class="form-control" type="text">
+        </div>
+        <div class="form-group col-4">
+          <label class="label">Type</label>
+          <input [ngModelOptions]="{standalone: true}" [(ngModel)]="command.commandType" placeholder="Type"  class="form-control" type="text">
+        </div>
+        <div class="form-group col-4">
+          <label class="label">Reference</label>
+          <input [ngModelOptions]="{standalone: true}" [(ngModel)]="command.commandReference" placeholder="Reference"  class="form-control" type="text">
         </div>
       </div>
       <div class="text-center">
-        <button class="btn btn-primary mr-1" (click) ="onSubmit()">Register</button>
+        <button class="btn btn-primary mr-1">Register</button>
         <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
       </div>
     </div></form>

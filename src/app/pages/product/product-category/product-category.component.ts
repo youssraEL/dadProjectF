@@ -32,11 +32,11 @@ export class ProductCategoryComponent implements OnInit {
     },
     columns: {
       categoryName: {
-        title: 'Product',
+        title: 'Category Name',
         type: 'string',
       },
       categoryDescription: {
-        title: 'Product reference',
+        title: 'Category Description',
         type: 'string',
       },
     },

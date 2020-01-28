@@ -9,19 +9,19 @@
     <div class="card-body">
       <div class="form-row">
         <div class="form-group col-4">
-          <label class="label">Product*</label>
+          <label class="label">Category Name*</label>
           <input formControlName="ice" [(ngModel)]="productCategory.categoryName" class="form-control" placeholder="name" type="text" required="true"  [ngClass]="{ 'is-invalid': submitted && f.ice.errors }" />
           <div *ngIf="submitted && f.ice.errors" class="invalid-feedback">
             <div *ngIf="f.ice.errors.required">ICE is required</div>
           </div></div>
         <div class="form-group col-4">
-          <label class="label">Product Category</label>
+          <label class="label">Category Description</label>
           <input [ngModelOptions]="{standalone: true}" [(ngModel)]="productCategory.categoryDescription"  placeholder="Category" class="form-control" type="text" required="true" />
         </div>
 
       </div>
       <div class="text-center">
-        <button class="btn btn-primary mr-1" (click) ="onSubmit()">Register</button>
+        <button class="btn btn-primary mr-1" >Register</button>
         <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
       </div>
 

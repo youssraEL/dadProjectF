@@ -19,8 +19,14 @@ export class ProductRegisteringComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
   productCategory: any;
+  categoryList = [];
   constructor(private service: ProductService , private formBuilder: FormBuilder ,
-              private productService: ProductCategoryService, private toast: ToastrService ) { }
+              private productService: ProductCategoryService, private toast: ToastrService ) {
+    this.productService.getAll().subscribe(data => {
+      data.forEach ( obj => {this.categoryList.push(obj.categoryName); });
+       } );
+
+  }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
@@ -39,13 +45,12 @@ export class ProductRegisteringComponent implements OnInit {
     if (this.registerForm.invalid) {
       return;
     }
-    this.productService.getByProctName(this.productCategory).subscribe(data => {
-      this.product.productCategory = data;
-    });
+    this.productService.getByProctName(this.productCategory).subscribe(data => {this.product.productCategory = data; });
+
     this.service.create(this.product).subscribe(data => {
     });
     this.toast.success('The process has been saved.', 'Success');
-    this.onReset();
+    // this.onReset();
     // display form values on success
   }
 
