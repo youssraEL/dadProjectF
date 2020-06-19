@@ -24,7 +24,6 @@ import {
   NbToastrModule,
   NbWindowModule,
 } from '@nebular/theme';
-import {ToastrModule} from 'ngx-toastr';
 
 export function init_app(injector: Injector) {
   return () =>
@@ -61,10 +60,6 @@ export function init_app(injector: Injector) {
       messageGoogleMapKey: 'AIzaSyA_wNuCzia92MAmdLRzmqitRGvCF7wCZPY',
     }),
     CoreModule.forRoot(),
-    ToastrModule.forRoot({
-      timeOut: 1000,
-      positionClass: 'toast-top-right',
-    }),
   ],
   bootstrap: [AppComponent],
   providers: [
