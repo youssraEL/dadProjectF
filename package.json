@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@agm/core": "^1.0.0-beta.5",
-    "@angular/animations": "^8.0.0",
+    "@angular/animations": "^8.2.14",
     "@angular/cdk": "^8.0.0",
     "@angular/common": "^8.0.0",
     "@angular/compiler": "^8.0.0",
@@ -74,7 +74,8 @@
     "tslib": "^1.9.0",
     "typeface-exo": "0.0.22",
     "web-animations-js": "github:angular/web-animations-js#release_pr208",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.9.1",
+    "ngx-toastr": "latest"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.800.2",

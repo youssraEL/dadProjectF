@@ -3,7 +3,6 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ProductCategory} from '../../../@core/backend/common/api/ProductCategory';
 import {ProductCategoryService} from '../../../@core/backend/common/services/ProductCategory.service';
 import {LocalDataSource} from 'ng2-smart-table';
-import {ToastrModule, ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'ngx-product-category',
