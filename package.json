@@ -75,7 +75,7 @@
     "typeface-exo": "0.0.22",
     "web-animations-js": "github:angular/web-animations-js#release_pr208",
     "zone.js": "~0.9.1",
-    "ngx-toastr": "latest"
+    "@angular/material": "^8.2.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.800.2",

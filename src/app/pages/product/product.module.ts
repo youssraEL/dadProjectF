@@ -8,18 +8,33 @@ import {ProductRoutingModule} from './product-routing.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NbCardModule, NbSelectModule} from '@nebular/theme';
 import {Ng2SmartTableModule} from 'ng2-smart-table';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ProductCategoryListComponent } from './product-category-list/product-category-list.component';
 
 
 @NgModule({
-  declarations: [ProductRegisteringComponent, ProductListComponent, ProductCategoryComponent, ProductComponent],
+  declarations: [
+    ProductComponent,
+    ProductRegisteringComponent,
+    ProductListComponent,
+    ProductCategoryComponent,
+    ProductCategoryListComponent,
+  ],
   imports: [
     CommonModule,
-    ProductRoutingModule,
+    MatDialogModule,
     ReactiveFormsModule,
     FormsModule,
     NbCardModule,
     Ng2SmartTableModule,
     NbSelectModule,
+  ],
+  entryComponents: [
+    ProductComponent,
+    ProductRegisteringComponent,
+    ProductListComponent,
+    ProductCategoryComponent,
+    ProductCategoryListComponent,
   ],
 })
 export class ProductModule { }

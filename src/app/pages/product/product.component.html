@@ -1,0 +1,21 @@
+
+
+  <div class="row">
+  <div class="col-sm-6">
+  </div>
+    <div class="col-sm-6 text-md-left">
+      <button  class="btn btn-secondary mr-1" (click)="popupRegister()" type="submit" nbButton  status="danger" outline>Registering</button>
+      <button class="btn btn-secondary mr-1" (click)="popupRegisterCategory()" type="submit" nbButton  status="danger" outline>Category Registering</button>
+      <button class="btn btn-secondary mr-1" (click)="List()" type="submit" nbButton  status="danger" outline>Category List</button>
+
+    </div>
+  </div>
+
+<br>
+
+  <nb-card>
+    <nb-card-header>   Client Lists </nb-card-header>
+    <nb-card-body>
+<ngx-product-list></ngx-product-list>
+</nb-card-body>
+</nb-card>

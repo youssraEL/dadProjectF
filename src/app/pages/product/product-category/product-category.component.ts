@@ -3,12 +3,14 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ProductCategory} from '../../../@core/backend/common/api/ProductCategory';
 import {ProductCategoryService} from '../../../@core/backend/common/services/ProductCategory.service';
 import {LocalDataSource} from 'ng2-smart-table';
+import {ToastrService} from 'ngx-toastr';
+import {MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'ngx-product-category',
   templateUrl: './product-category.component.html',
   styleUrls: ['./product-category.component.scss'],
-  providers: [ProductCategoryService , ToastrService ],
+  providers: [ProductCategoryService  ],
 })
 export class ProductCategoryComponent implements OnInit {
 
@@ -44,7 +46,7 @@ export class ProductCategoryComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
   constructor(private service: ProductCategoryService , private formBuilder: FormBuilder ,
-              private toast: ToastrService) { }
+              public dialogRef: MatDialogRef<ProductCategoryComponent>) { }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
@@ -67,7 +69,6 @@ export class ProductCategoryComponent implements OnInit {
     }
     this.service.create(this.productCategory).subscribe(data => {
     });
-    this.toast.success('The process has been saved.', 'Success');
     this.onReset();
     // display form values on success
   }

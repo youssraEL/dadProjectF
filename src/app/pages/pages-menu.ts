@@ -7,6 +7,7 @@
 import { NbMenuItem } from '@nebular/theme';
 import { Observable, of } from 'rxjs';
 import { Injectable } from '@angular/core';
+import {ProductModule} from './product/product.module';
 
 @Injectable()
 export class PagesMenu {
@@ -52,23 +53,7 @@ export class PagesMenu {
       {
         title: 'Product',
         icon: 'shopping-cart-outline',
-        children: [
-          {
-            title: 'Registering',
-            icon: 'shopping-cart-outline',
-            link: '/pages/product/registering',
-          },
-          {
-            title: 'Category',
-            icon: 'layout-outline',
-            link: '/pages/product/category',
-          },
-          {
-            title: 'List',
-            icon: 'list-outline',
-            link: '/pages/product/list',
-          },
-        ],
+        link: '/pages/product',
       },
       {
         title: 'Command',

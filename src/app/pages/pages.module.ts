@@ -16,6 +16,7 @@ import { ECommerceModule } from './e-commerce/e-commerce.module';
 import { NbMenuModule } from '@nebular/theme';
 import { AuthModule } from '../@auth/auth.module';
 import {ToastrModule} from 'ngx-toastr';
+import {ProductModule} from './product/product.module';
 const PAGES_COMPONENTS = [
   PagesComponent,
 ];
@@ -25,6 +26,7 @@ const PAGES_COMPONENTS = [
     PagesRoutingModule,
     ThemeModule,
     DashboardModule,
+    ProductModule,
     ECommerceModule,
     NbMenuModule,
     MiscellaneousModule,

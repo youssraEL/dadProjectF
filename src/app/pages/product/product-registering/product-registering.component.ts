@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ProductService} from '../../../@core/backend/common/services/Product.service';
 import {Product} from '../../../@core/backend/common/api/Product';
 import {ProductCategoryService} from '../../../@core/backend/common/services/ProductCategory.service';
+import {Component, Inject, OnInit, Optional} from '@angular/core';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import {UsersService} from '../../../@core/mock/common/users.service';
 
 
 @Component({
   selector: 'ngx-product-registering',
   templateUrl: './product-registering.component.html',
   styleUrls: ['./product-registering.component.scss'],
-  providers: [ProductService, ProductCategoryService],
+  providers: [ProductService, ProductCategoryService  , UsersService],
 })
 
 export class ProductRegisteringComponent implements OnInit {
@@ -21,9 +24,10 @@ export class ProductRegisteringComponent implements OnInit {
   productCategory: any;
   categoryList = [];
   constructor(private service: ProductService , private formBuilder: FormBuilder ,
-              private productService: ProductCategoryService ) {
-    this.productService.getAll().subscribe(data => {
-      data.forEach ( obj => {this.categoryList.push(obj.categoryName); });
+              private productService: ProductCategoryService ,
+              public dialogRef: MatDialogRef<ProductRegisteringComponent>) {
+    this.productService.getAll().subscribe(obj => {
+      obj.forEach ( Obj => {this.categoryList.push(obj.categoryName); });
        } );
 
   }
@@ -61,4 +65,7 @@ export class ProductRegisteringComponent implements OnInit {
     this.product = new Product();
   }
 
+  closeDialog() {
+    this.dialogRef.close({event: 'close'});
+  }
 }

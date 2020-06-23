@@ -11,6 +11,7 @@ import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
+import {ProductComponent} from './product/product.component';
 
 const routes: Routes = [{
   path: '',
@@ -25,6 +26,10 @@ const routes: Routes = [{
       component: DashboardComponent,
     },
     {
+      path: 'product',
+      component: ProductComponent,
+    },
+    {
       path: 'users',
       loadChildren: () => import('./users/users.module')
         .then(m => m.UsersModule),
@@ -33,11 +38,6 @@ const routes: Routes = [{
       path: 'client',
       loadChildren: () => import('./client/client.module')
         .then(m => m.ClientModule),
-    },
-    {
-      path: 'product',
-      loadChildren: () => import('./product/product.module')
-        .then(m => m.ProductModule),
     },
     {
       path: 'command',
