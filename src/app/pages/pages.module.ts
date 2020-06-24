@@ -17,6 +17,7 @@ import { NbMenuModule } from '@nebular/theme';
 import { AuthModule } from '../@auth/auth.module';
 import {ToastrModule} from 'ngx-toastr';
 import {ProductModule} from './product/product.module';
+import {ClientModule} from './client/client.module';
 const PAGES_COMPONENTS = [
   PagesComponent,
 ];
@@ -26,6 +27,7 @@ const PAGES_COMPONENTS = [
     PagesRoutingModule,
     ThemeModule,
     DashboardModule,
+    ClientModule,
     ProductModule,
     ECommerceModule,
     NbMenuModule,

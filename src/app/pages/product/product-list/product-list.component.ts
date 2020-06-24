@@ -49,7 +49,7 @@ export class ProductListComponent implements OnInit {
         title: 'Stock',
         type: 'number',
       },
-      status: {
+      statut: {
         title: 'Status',
         type: 'string',
       },

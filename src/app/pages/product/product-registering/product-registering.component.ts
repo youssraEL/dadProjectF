@@ -27,7 +27,7 @@ export class ProductRegisteringComponent implements OnInit {
               private productService: ProductCategoryService ,
               public dialogRef: MatDialogRef<ProductRegisteringComponent>) {
     this.productService.getAll().subscribe(obj => {
-      obj.forEach ( Obj => {this.categoryList.push(obj.categoryName); });
+      obj.forEach ( Obj => {this.categoryList.push(Obj.categoryName); });
        } );
 
   }
@@ -49,9 +49,10 @@ export class ProductRegisteringComponent implements OnInit {
     if (this.registerForm.invalid) {
       return;
     }
-    this.productService.getByProctName(this.productCategory).subscribe(data => {this.product.productCategory = data; });
+    this.productService.getByProctName(this.productCategory).subscribe(data => {this.product.productCategory = data;
 
-    this.service.create(this.product).subscribe(data => {
+    this.service.create(this.product).subscribe(Data => {
+    });
     });
     // this.toast.success('The process has been saved.', 'Success');
     // this.onReset();

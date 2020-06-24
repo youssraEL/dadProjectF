@@ -3,7 +3,7 @@ import {Client} from '../../../@core/backend/common/api/Client';
 import {FormBuilder, FormGroup, ValidationErrors, Validators} from '@angular/forms';
 import {ClientService} from '../../../@core/backend/common/services/Client.service';
 import {LocalDataSource} from 'ng2-smart-table';
-// import {ToastrService} from 'ngx-toastr';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'ngx-clientlist',
@@ -71,7 +71,7 @@ export class ClientlistComponent implements OnInit {
   };
   source: LocalDataSource = new LocalDataSource();
 
-  constructor(private service: ClientService) {
+  constructor(private service: ClientService ) {
     this.service.getAll().subscribe(data => {
       this.source = data;
     });

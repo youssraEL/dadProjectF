@@ -37,19 +37,8 @@ export class PagesMenu {
       {
         title: 'Client',
         icon: 'person-outline',
-        children: [
-          {
-            title: 'Registering',
-            icon: 'person-add-outline',
-            link: '/pages/client/registering',
-          },
-          {
-            title: 'List',
-            icon: 'list-outline',
-            link: '/pages/client/list',
-          },
-        ],
-  },
+        link: '/pages/client',
+      },
       {
         title: 'Product',
         icon: 'shopping-cart-outline',

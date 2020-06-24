@@ -12,6 +12,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import {ProductComponent} from './product/product.component';
+import {ClientComponent} from './client/client.component';
 
 const routes: Routes = [{
   path: '',
@@ -26,6 +27,10 @@ const routes: Routes = [{
       component: DashboardComponent,
     },
     {
+      path: 'client',
+      component: ClientComponent,
+    },
+    {
       path: 'product',
       component: ProductComponent,
     },
@@ -33,11 +38,6 @@ const routes: Routes = [{
       path: 'users',
       loadChildren: () => import('./users/users.module')
         .then(m => m.UsersModule),
-    },
-    {
-      path: 'client',
-      loadChildren: () => import('./client/client.module')
-        .then(m => m.ClientModule),
     },
     {
       path: 'command',

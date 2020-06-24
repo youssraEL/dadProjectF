@@ -9,14 +9,22 @@ import {NbCardModule} from '@nebular/theme';
 import {Ng2SmartTableModule} from 'ng2-smart-table';
 
 @NgModule({
-  declarations: [ClientComponent, ClientregisterComponent, ClientlistComponent],
+  declarations: [
+    ClientComponent,
+    ClientregisterComponent,
+    ClientlistComponent],
   imports: [
     CommonModule,
-    ClientRoutingModule,
+    // ClientRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     NbCardModule,
     Ng2SmartTableModule,
+  ],
+  entryComponents : [
+    ClientComponent,
+    ClientregisterComponent,
+    ClientlistComponent,
   ],
 })
 export class ClientModule {

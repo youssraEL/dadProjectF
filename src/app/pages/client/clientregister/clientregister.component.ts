@@ -2,20 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import {Client} from '../../../@core/backend/common/api/Client';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ClientService} from '../../../@core/backend/common/services/Client.service';
-import { ToastrService } from 'ngx-toastr';
+import {MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'ngx-clientregister',
   templateUrl: './clientregister.component.html',
   styleUrls: ['./clientregister.component.scss'],
-  providers: [ClientService , ToastrService],
+  providers: [ClientService ],
 })
 export class ClientregisterComponent implements OnInit {
 
   client: Client = new Client();
   registerForm: FormGroup;
   submitted = false;
-  constructor(private service: ClientService , private formBuilder: FormBuilder , private toast: ToastrService) { }
+  constructor(private service: ClientService , private formBuilder: FormBuilder ,
+    public dialogRef: MatDialogRef<ClientregisterComponent>) { }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
@@ -34,7 +35,7 @@ export class ClientregisterComponent implements OnInit {
       return;
     }
     this.service.create(this.client).subscribe(data => { });
-    this.toast.success('The process has been saved.', 'Success');
+    // this.toast.success('The process has been saved.', 'Success');
      this.init();
     // display form values on success
   }
