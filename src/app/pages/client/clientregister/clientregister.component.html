@@ -9,7 +9,7 @@
           <label class="label">ICE*</label>
           <input formControlName="ice" [(ngModel)]="client.ice" class="form-control" placeholder="ICE" type="text" required="true"  [ngClass]="{ 'is-invalid': submitted && f.ice.errors }" />
           <div *ngIf="submitted && f.ice.errors" class="invalid-feedback">
-            <div *ngIf="f.ice.errors.required">ICE is required</div>
+            <div *ngIf="f.ice.errors.required">ICE is required if your a Enterprise</div>
           </div></div>
         <div class="form-group col-4">
           <label class="label">Fisrt Name</label>

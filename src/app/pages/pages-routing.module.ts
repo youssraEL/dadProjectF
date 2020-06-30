@@ -13,6 +13,7 @@ import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import {ProductComponent} from './product/product.component';
 import {ClientComponent} from './client/client.component';
+import {FournisseurComponent} from './fournisseur/fournisseur.component';
 
 const routes: Routes = [{
   path: '',
@@ -33,6 +34,10 @@ const routes: Routes = [{
     {
       path: 'product',
       component: ProductComponent,
+    },
+    {
+      path: 'provider',
+      component: FournisseurComponent,
     },
     {
       path: 'users',

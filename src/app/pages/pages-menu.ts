@@ -45,6 +45,11 @@ export class PagesMenu {
         link: '/pages/product',
       },
       {
+        title: 'Provider',
+        icon: 'person-outline',
+        link: '/pages/provider',
+      },
+      {
         title: 'Command',
         icon: 'edit-2-outline',
         children: [

@@ -18,6 +18,7 @@ import { AuthModule } from '../@auth/auth.module';
 import {ToastrModule} from 'ngx-toastr';
 import {ProductModule} from './product/product.module';
 import {ClientModule} from './client/client.module';
+import {FournisseurModule} from './fournisseur/fournisseur.module';
 const PAGES_COMPONENTS = [
   PagesComponent,
 ];
@@ -28,6 +29,7 @@ const PAGES_COMPONENTS = [
     ThemeModule,
     DashboardModule,
     ClientModule,
+    FournisseurModule,
     ProductModule,
     ECommerceModule,
     NbMenuModule,
