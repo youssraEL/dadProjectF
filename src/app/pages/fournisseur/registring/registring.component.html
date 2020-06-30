@@ -1,0 +1,53 @@
+
+<div class="card m-3">
+  <h5 class="card-header" align="center"> Provider Registering</h5>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="card-body">
+      <div class="form-row">
+        <div class="form-group col-4">
+          <label class="label">ICE*</label>
+          <input formControlName="ice" [(ngModel)]="fournisseur.ice" class="form-control" placeholder="ICE" type="text" required="true"  [ngClass]="{ 'is-invalid': submitted && f.ice.errors }" />
+          <div *ngIf="submitted && f.ice.errors" class="invalid-feedback">
+            <div *ngIf="f.ice.errors.required">ICE is required if your a Enterprise</div>
+          </div></div>
+        <div class="form-group col-4">
+          <label class="label">Fisrt Name</label>
+          <input [ngModelOptions]="{standalone: true}" [(ngModel)]="fournisseur.firstname"  placeholder="Fisrt Name" class="form-control" type="text" required="true" />
+        </div>
+        <div class="form-group col-4">
+          <label class="label">Last name</label>
+          <input [ngModelOptions]="{standalone: true}" [(ngModel)]="fournisseur.lastname"  placeholder="List Name" class="form-control" type="text" required="true"/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-4">
+          <label class="label">Phone Number</label>
+          <input [ngModelOptions]="{standalone: true}" [(ngModel)]="fournisseur.phone" placeholder="Phone number" class="form-control" type="text" required>
+        </div>
+        <div class="form-group col-4">
+          <label class="label">Adress</label>
+          <input [ngModelOptions]="{standalone: true}" [(ngModel)]="fournisseur.adresse" placeholder="Address" class="form-control" type="text">
+        </div>
+        <div class="form-group col-4">
+          <label class="label">Fix</label>
+          <input [(ngModel)]="fournisseur.fix" [ngModelOptions]="{standalone: true}" class="form-control" type="text">
+        </div></div>
+      <div class="form-row">
+        <div class="form-group col-4">
+          <label class="label">Raison Sociale</label>
+          <input  [(ngModel)]="fournisseur.RaisonSociale" [ngModelOptions]="{standalone: true}" placeholder="Raison Sociale"  class="form-control" type="text">
+        </div>
+        <div class="form-group col-4">
+          <label class="label">Type Client</label>
+          <input [(ngModel)]="fournisseur.typeClient"  [ngModelOptions]="{standalone: true}" placeholder="Type Client" class="form-control" type="text">
+        </div>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-primary mr-1" >Register</button>
+        <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+      </div>
+
+    </div></form>
+</div>
+
+
