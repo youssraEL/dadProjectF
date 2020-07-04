@@ -50,7 +50,12 @@ export class PagesMenu {
         link: '/pages/provider',
       },
       {
-        title: 'Command',
+        title: 'Orders',
+        icon: 'edit-2-outline',
+        link: '/pages/Orders/list',
+      },
+      {
+        title: 'command',
         icon: 'edit-2-outline',
         children: [
           {

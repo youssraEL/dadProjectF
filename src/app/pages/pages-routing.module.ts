@@ -40,6 +40,15 @@ const routes: Routes = [{
       component: FournisseurComponent,
     },
     {
+      path: 'Orders',
+      loadChildren: () => import ('./orders/orders.module').then(m => m.OrdersModule),
+    },
+    {
+      path: 'orderdetail',
+      loadChildren: () => import ('./orderdetail/orderdetail.module')
+        .then(m => m.OrderdetailModule),
+    },
+    {
       path: 'users',
       loadChildren: () => import('./users/users.module')
         .then(m => m.UsersModule),

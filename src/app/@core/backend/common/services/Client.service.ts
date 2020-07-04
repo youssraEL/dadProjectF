@@ -38,6 +38,16 @@ export class ClientService {
         catchError(this.errorHandl),
       );
   }
+
+
+  // GET
+  public getById(id: number): Observable<any> {
+    return this.http.get(this.baseurl + '/getById/' + id)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl),
+      );
+  }
   public getByCin(ice: String): Observable<any> {
     return this.http.get(this.baseurl + '/getByIce/' + ice)
       .pipe(

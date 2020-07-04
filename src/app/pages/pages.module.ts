@@ -19,6 +19,8 @@ import {ToastrModule} from 'ngx-toastr';
 import {ProductModule} from './product/product.module';
 import {ClientModule} from './client/client.module';
 import {FournisseurModule} from './fournisseur/fournisseur.module';
+import {OrdersModule} from './orders/orders.module';
+import {OrderdetailModule} from './orderdetail/orderdetail.module';
 const PAGES_COMPONENTS = [
   PagesComponent,
 ];
@@ -31,6 +33,8 @@ const PAGES_COMPONENTS = [
     ClientModule,
     FournisseurModule,
     ProductModule,
+    OrdersModule,
+    OrderdetailModule,
     ECommerceModule,
     NbMenuModule,
     MiscellaneousModule,
@@ -38,6 +42,7 @@ const PAGES_COMPONENTS = [
   ],
   declarations: [
     ...PAGES_COMPONENTS,
+
   ],
   providers: [
     PagesMenu,

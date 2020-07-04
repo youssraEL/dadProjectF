@@ -3,12 +3,12 @@ import {HttpService} from '../api/http.service';
 import {Observable, throwError} from 'rxjs';
 import {HttpHeaders} from '@angular/common/http';
 import {catchError, retry} from 'rxjs/operators';
-import {Product} from '../api/Product';
+import {Orders} from '../api/Orders';
 
 @Injectable()
-export class ProductService {
+export class OrdersService {
 
-  private baseurl = 'Product';
+  private baseurl = 'Orders';
 
 
   // Http Headers
@@ -22,7 +22,7 @@ export class ProductService {
   }
 
   // POST JSON.stringify(data)
-  public create(data: Product): Observable<Product> {
+  public create(data: Orders): Observable<Orders> {
     return this.http.post(this.baseurl + '/create', data , this.httpOptions)
       .pipe(
         retry(1),
@@ -31,21 +31,14 @@ export class ProductService {
   }
 
   // GET
-  public get(product: string): Observable<any> {
-    return this.http.get(this.baseurl + '/getByName/' +  product)
+  public get(id: number): Observable<any> {
+    return this.http.get(this.baseurl + id)
       .pipe(
         retry(1),
         catchError(this.errorHandl),
       );
   }
-  // GET
-  public getById(id: number): Observable<any> {
-    return this.http.get(this.baseurl + '/getById/' +  id)
-      .pipe(
-        retry(1),
-        catchError(this.errorHandl),
-      );
-  }
+
   // GET
   public getAll(): Observable<any> {
     return this.http.get(this.baseurl + '/getAll')
@@ -56,7 +49,7 @@ export class ProductService {
   }
 
   // PUT
-  public update(data: Product): Observable<Product> {
+  public update(data: Orders): Observable<Orders> {
     return this.http.put(this.baseurl + '/update', data , this.httpOptions)
       .pipe(
         retry(1),
@@ -65,7 +58,7 @@ export class ProductService {
   }
 
   // DELETE
-  public delete(id: number) {
+  public deleteClient(id: number) {
     return this.http.delete(this.baseurl + '/delete/' + id, this.httpOptions)
       .pipe(
         retry(1),
@@ -74,7 +67,7 @@ export class ProductService {
   }
 
 
-  public updateList(list: Product[]): Observable<Product[]> {
+  public updateList(list: Orders[]): Observable<Orders[]> {
     return this.http.put(this.baseurl + '/updateList', list)
       .pipe(
         retry(1),
