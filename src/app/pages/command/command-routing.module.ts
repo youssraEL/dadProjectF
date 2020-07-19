@@ -8,16 +8,6 @@ import {CommandComponent} from './command.component';
 const routes: Routes = [{
   path: '',
   component: CommandComponent,
-  children: [
-    {
-      path: 'newCommand',
-      component: CommandRegistringComponent,
-    },
-    {
-      path: 'listCommand',
-      component: CommandListComponent,
-    },
-  ],
 }];
 
 @NgModule({

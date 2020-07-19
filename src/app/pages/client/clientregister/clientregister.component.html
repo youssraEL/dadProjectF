@@ -25,14 +25,15 @@
           <label class="label">Phone Number</label>
           <input [ngModelOptions]="{standalone: true}" [(ngModel)]="client.phone" placeholder="Phone number" class="form-control" type="text" required>
         </div>
-      <div class="form-group col-4">
+        <div class="form-group col-4">
         <label class="label">Adress</label>
         <input [ngModelOptions]="{standalone: true}" [(ngModel)]="client.adresse" placeholder="Address" class="form-control" type="text">
       </div>
-      <div class="form-group col-4">
+        <div class="form-group col-4">
         <label class="label">Fix</label>
         <input [(ngModel)]="client.fix" [ngModelOptions]="{standalone: true}" class="form-control" type="text">
-      </div></div>
+      </div>
+      </div>
 <div class="form-row">
       <div class="form-group col-4">
         <label class="label">Raison Sociale</label>
@@ -40,8 +41,14 @@
       </div>
       <div class="form-group col-4">
         <label class="label">Type Client</label>
-        <input [(ngModel)]="client.typeClient"  [ngModelOptions]="{standalone: true}" placeholder="Type Client" class="form-control" type="text">
+        <nb-select [(ngModel)]="client.typeClient"  [ngModelOptions]="{standalone: true}" class="type-select " type="text" nbSelect fullWidth  placeholder="Client Type">
+          <nb-option *ngFor="let item of ClientType" [value]="item" >{{item}}</nb-option>
+        </nb-select>
       </div>
+      <div class="from-group col-4">
+    <label class="label">Email</label>
+    <input [ngModelOptions]="{standalone: true}" [(ngModel)]="client.email" placeholder="Address" class="form-control" type="text">
+  </div>
     </div>
       <div class="text-center">
         <button class="btn btn-primary mr-1" >Register</button>

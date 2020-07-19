@@ -14,6 +14,7 @@ import { NotFoundComponent } from './miscellaneous/not-found/not-found.component
 import {ProductComponent} from './product/product.component';
 import {ClientComponent} from './client/client.component';
 import {FournisseurComponent} from './fournisseur/fournisseur.component';
+import {StockComponent} from './stock/stock.component';
 
 const routes: Routes = [{
   path: '',
@@ -47,6 +48,10 @@ const routes: Routes = [{
       path: 'orderdetail',
       loadChildren: () => import ('./orderdetail/orderdetail.module')
         .then(m => m.OrderdetailModule),
+    },
+    {
+      path: 'stock',
+      component: StockComponent,
     },
     {
       path: 'users',

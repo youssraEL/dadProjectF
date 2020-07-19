@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CommandRegistringComponent } from './command-registring.component';
+import { RegestringComponent } from './regestring.component';
 
-describe('CommandRegistringComponent', () => {
-  let component: CommandRegistringComponent;
-  let fixture: ComponentFixture<CommandRegistringComponent>;
+describe('RegestringComponent', () => {
+  let component: RegestringComponent;
+  let fixture: ComponentFixture<RegestringComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CommandRegistringComponent ],
+      declarations: [ RegestringComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CommandRegistringComponent);
+    fixture = TestBed.createComponent(RegestringComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

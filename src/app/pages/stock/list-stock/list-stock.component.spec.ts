@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CommandRegistringComponent } from './command-registring.component';
+import { ListStockComponent } from './list-stock.component';
 
-describe('CommandRegistringComponent', () => {
-  let component: CommandRegistringComponent;
-  let fixture: ComponentFixture<CommandRegistringComponent>;
+describe('ListStockComponent', () => {
+  let component: ListStockComponent;
+  let fixture: ComponentFixture<ListStockComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CommandRegistringComponent ],
+      declarations: [ ListStockComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CommandRegistringComponent);
+    fixture = TestBed.createComponent(ListStockComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

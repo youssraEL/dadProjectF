@@ -14,6 +14,7 @@ export class RegistringComponent implements OnInit {
   fournisseur: Fournisseur = new Fournisseur();
   registerForm: FormGroup;
   submitted = false;
+  ProviderList = ['Personal ', 'Enterprise'];
   constructor(private service: FournisseurService , private formBuilder: FormBuilder ,
               public dialogRef: MatDialogRef<RegistringComponent>) { }
 

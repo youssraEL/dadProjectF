@@ -1,0 +1,47 @@
+
+
+
+<div class="card m-3">
+<h5 class="card-header" align="center"> Regestring</h5>
+<!--form [formGroup]="registerForm" (ngSubmit)="onSubmit()"-->
+  <div class="card-body">
+    <div class="form-row">
+      <div class="form-group col-4">
+        <label class="label">Client</label>
+        <!--input [ngModelOptions]="{standalone: true}" [(ngModel)]="orders.client"  placeholder="Fisrt Name" class="form-control" type="text" required="true" /-->
+        <ng-select class="form-control" fullWidth placeholder="" [items]="clients"
+                   bindLabel='name' autofocus bindValue="id" [(ngModel)]="client">
+        </ng-select>
+      </div>
+      <div class="form-group col-4">
+        <label class="label">Product</label>
+        <ng-select class="form-control" fullWidth placeholder="" [items]="products"
+                   bindLabel='product' autofocus bindValue="id" [(ngModel)]="product">
+        </ng-select>
+      </div>
+
+      <div class="form-group col-4">
+        <label class="label">Date</label>
+        <input [ngModelOptions]="{standalone: true}" [(ngModel)]="orders.date" class="form-control"  nbInput placeholder="Form Picker" [nbDatepicker]="formpicker">
+        <nb-datepicker #formpicker></nb-datepicker>
+      </div>
+      <div class="form-group col-4">
+        <label class="label">TTC</label>
+        <input [ngModelOptions]="{standalone: true}" [(ngModel)]="orders.TTC" placeholder="TTC" class="form-control"
+               type="text">
+      </div>
+      <div class="form-group col-4">
+        <label class="label">Qte</label>
+        <input [ngModelOptions]="{standalone: true}" [(ngModel)]="Qte" placeholder="Qte" class="form-control"
+               type="text">
+      </div>
+    </div>
+    <div class="text-center">
+      <button class="btn btn-primary mr-1" (click)="onSubmit()">Register</button>
+      <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+    </div>
+
+  </div><!--/form-->
+</div>
+
+

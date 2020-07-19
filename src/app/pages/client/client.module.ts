@@ -4,7 +4,7 @@ import { ClientComponent } from './client.component';
 import { ClientregisterComponent } from './clientregister/clientregister.component';
 import { ClientlistComponent } from './clientlist/clientlist.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {NbCardModule} from '@nebular/theme';
+import {NbCardModule, NbSelectModule} from '@nebular/theme';
 import {Ng2SmartTableModule} from 'ng2-smart-table';
 
 @NgModule({
@@ -19,6 +19,7 @@ import {Ng2SmartTableModule} from 'ng2-smart-table';
     ReactiveFormsModule,
     NbCardModule,
     Ng2SmartTableModule,
+    NbSelectModule,
   ],
   entryComponents : [
     ClientComponent,

@@ -21,6 +21,7 @@ import {ClientModule} from './client/client.module';
 import {FournisseurModule} from './fournisseur/fournisseur.module';
 import {OrdersModule} from './orders/orders.module';
 import {OrderdetailModule} from './orderdetail/orderdetail.module';
+import {StockModule} from './stock/stock.module';
 const PAGES_COMPONENTS = [
   PagesComponent,
 ];
@@ -28,6 +29,7 @@ const PAGES_COMPONENTS = [
 @NgModule({
   imports: [
     PagesRoutingModule,
+    StockModule,
     ThemeModule,
     DashboardModule,
     ClientModule,

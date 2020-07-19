@@ -4,18 +4,19 @@ import { FournisseurComponent } from './fournisseur.component';
 import { RegistringComponent } from './registring/registring.component';
 import { ListComponent } from './list/list.component';
 import {Ng2SmartTableModule} from 'ng2-smart-table';
-import {NbCardModule} from '@nebular/theme';
+import {NbCardModule, NbSelectModule} from '@nebular/theme';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [FournisseurComponent, RegistringComponent, ListComponent],
-  imports: [
-    CommonModule,
-    Ng2SmartTableModule,
-    NbCardModule,
-    FormsModule,
-    ReactiveFormsModule,
-  ],
+    imports: [
+        CommonModule,
+        Ng2SmartTableModule,
+        NbCardModule,
+        FormsModule,
+        ReactiveFormsModule,
+        NbSelectModule,
+    ],
   entryComponents : [
     FournisseurComponent,
     RegistringComponent,

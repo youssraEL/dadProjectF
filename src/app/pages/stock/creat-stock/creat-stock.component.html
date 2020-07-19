@@ -1,0 +1,44 @@
+
+<nb-card>
+  <nb-card-header>
+    Creat Registering
+  </nb-card-header>
+  <nb-card-body>
+
+        <div class="row">
+          <div class="col-4">
+
+            <label class="label">Product*</label>
+            <nb-select   [(ngModel)]="stock.product"  class="type-select " type="text" nbSelect fullWidth
+                         placeholder="Product">
+              <nb-option *ngFor="let item of ProductsList" [value]="item" >{{item}}</nb-option>
+            </nb-select>
+            </div>
+          <div class="col-4">
+            <label class="label">Qte Stock</label>
+            <input  [(ngModel)]="stock.Qte_Stock"  placeholder="Qte Stock" class="form-control" type="text" required="true" />
+          </div>
+        </div>
+        <div class="text-center">
+          <button class="btn btn-primary mr-1" (click)="onSubmit()">Register</button>
+          <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+        </div>
+  </nb-card-body></nb-card>
+
+
+<!--nb-card>
+  <nb-card-header>
+    Client Lists
+  </nb-card-header>
+
+  <nb-card-body>
+    <ng2-smart-table [settings]="settings" [source]="source"
+                     (createConfirm)="create($event)"
+                     (editConfirm)="edit($event)"
+                     (deleteConfirm)="onDeleteConfirm($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card-->
+
+
+

@@ -38,8 +38,11 @@
           <input  [(ngModel)]="fournisseur.RaisonSociale" [ngModelOptions]="{standalone: true}" placeholder="Raison Sociale"  class="form-control" type="text">
         </div>
         <div class="form-group col-4">
-          <label class="label">Type Client</label>
-          <input [(ngModel)]="fournisseur.typeClient"  [ngModelOptions]="{standalone: true}" placeholder="Type Client" class="form-control" type="text">
+          <label class="label">Type Provider</label>
+          <nb-select [(ngModel)]="fournisseur.typeFournisseur"  [ngModelOptions]="{standalone: true}"
+                     placeholder="Type Provider" class="form-control" type="text">
+            <nb-option *ngFor="let item of ProviderList" [value]="item" >{{item}}</nb-option>
+          </nb-select>
         </div>
       </div>
       <div class="text-center">

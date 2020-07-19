@@ -8,7 +8,7 @@ export class Fournisseur {
   phone: string;
   fix: string;
   email: string;
-  typeClient: string;
+  typeFournisseur: string;
 
   constructor() {
   }

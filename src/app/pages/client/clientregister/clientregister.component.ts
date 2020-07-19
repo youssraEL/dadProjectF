@@ -15,6 +15,7 @@ export class ClientregisterComponent implements OnInit {
   client: Client = new Client();
   registerForm: FormGroup;
   submitted = false;
+  ClientType = ['Personnel' , 'Enterprise'];
   constructor(private service: ClientService , private formBuilder: FormBuilder ,
     public dialogRef: MatDialogRef<ClientregisterComponent>) { }
 
