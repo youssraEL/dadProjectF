@@ -15,6 +15,7 @@ import {ProductComponent} from './product/product.component';
 import {ClientComponent} from './client/client.component';
 import {FournisseurComponent} from './fournisseur/fournisseur.component';
 import {StockComponent} from './stock/stock.component';
+import {CommandComponent} from './command/command.component';
 
 const routes: Routes = [{
   path: '',
@@ -60,8 +61,7 @@ const routes: Routes = [{
     },
     {
       path: 'command',
-      loadChildren: () => import('./command/Command.module')
-        .then(m => m.CommandModule),
+      component: CommandComponent,
     },
     {
       path: 'layout',

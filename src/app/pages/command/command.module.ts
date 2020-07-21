@@ -20,5 +20,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     NbSelectModule,
     NbDatepickerModule,
   ],
+  entryComponents: [CommandRegistringComponent, CommandListComponent, CommandComponent]
 })
+
 export class CommandModule { }

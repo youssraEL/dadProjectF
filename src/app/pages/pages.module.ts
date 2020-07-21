@@ -22,6 +22,7 @@ import {FournisseurModule} from './fournisseur/fournisseur.module';
 import {OrdersModule} from './orders/orders.module';
 import {OrderdetailModule} from './orderdetail/orderdetail.module';
 import {StockModule} from './stock/stock.module';
+import {CommandModule} from './command/command.module';
 const PAGES_COMPONENTS = [
   PagesComponent,
 ];
@@ -30,6 +31,7 @@ const PAGES_COMPONENTS = [
   imports: [
     PagesRoutingModule,
     StockModule,
+    CommandModule,
     ThemeModule,
     DashboardModule,
     ClientModule,

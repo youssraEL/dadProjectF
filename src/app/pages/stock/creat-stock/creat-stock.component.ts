@@ -22,7 +22,7 @@ export class CreatStockComponent implements OnInit {
               public dialogRef: MatDialogRef<CreatStockComponent>) {
     this.service.getAll().subscribe( data => {
       data.forEach(obj => {
-        this.ProductsList.push(obj.productName);
+        this.ProductsList.push({ obj : obj.productName, id: obj.id});
         });
   });
   }
@@ -39,28 +39,22 @@ export class CreatStockComponent implements OnInit {
   get f() { return this.registerForm.controls; }
 
   onSubmit() {
-    this.submitted = true;
-
-    // stop here if form is invalid
-    if (this.registerForm.invalid) {
-      return;
-    }
-    this.serviceStock.create(this.stock).subscribe(data => {
-    });
-    this.onReset();
+    this.service.getById(this.product).subscribe( data => {
+      this.stock.product = data;
+      this.serviceStock.create(this.stock).subscribe(obj => {
+    }); });
     // display form values on success
   }
 
 
   onReset() {
-    this.submitted = false;
-    this.registerForm.reset();
     this.stock = new Stock();
   }
 
 
   source: LocalDataSource = new LocalDataSource();
   ProductsList = [];
+  product: any;
 
   onDeleteConfirm(event: any) {
     if (window.confirm('Are you sure you want to delete?')) {

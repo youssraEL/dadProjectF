@@ -14,8 +14,7 @@ export class ClientComponent implements OnInit {
 
   constructor(private dialog: MatDialog) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   popupRegister() {
     const dialogRef = this.dialog.open(ClientregisterComponent, {

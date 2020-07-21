@@ -55,18 +55,7 @@ export class PagesMenu {
       {
         title: 'command',
         icon: 'edit-2-outline',
-        children: [
-          {
-            title: 'Registering',
-            icon: 'edit-2-outline',
-            link: '/pages/command/registering',
-          },
-          {
-            title: 'List',
-            icon: 'list-outline',
-            link: '/pages/command/list',
-          },
-        ],
+        link: '/pages/command',
       },
       {
         title: 'Auth',

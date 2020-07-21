@@ -60,7 +60,7 @@ export class ListComponent implements OnInit {
         title: 'Raison Sociale',
         type: 'string',
       },
-      typeClient: {
+      typeFournisseur: {
         title: 'Type Client',
         type: 'string',
       },

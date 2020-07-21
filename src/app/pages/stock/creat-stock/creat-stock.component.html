@@ -9,16 +9,17 @@
           <div class="col-4">
 
             <label class="label">Product*</label>
-            <nb-select   [(ngModel)]="stock.product"  class="type-select " type="text" nbSelect fullWidth
+            <nb-select   [(ngModel)]="product"  class="type-select " type="number" nbSelect fullWidth
                          placeholder="Product">
-              <nb-option *ngFor="let item of ProductsList" [value]="item" >{{item}}</nb-option>
+              <nb-option *ngFor="let item of ProductsList" [value]="item.id" >{{item.obj}}</nb-option>
             </nb-select>
             </div>
           <div class="col-4">
             <label class="label">Qte Stock</label>
-            <input  [(ngModel)]="stock.Qte_Stock"  placeholder="Qte Stock" class="form-control" type="text" required="true" />
+            <input  [(ngModel)]="stock.QteStock"  placeholder="Qte Stock" class="form-control" type="text" required="true" />
           </div>
         </div>
+    <br>
         <div class="text-center">
           <button class="btn btn-primary mr-1" (click)="onSubmit()">Register</button>
           <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
